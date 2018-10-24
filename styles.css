@@ -1,0 +1,93 @@
+*{
+    border: 1px solid black;
+    padding: 0;
+    margin: 0;
+}
+
+.remaining-budget {
+
+    display: flex;
+    flex-direction: row;
+    height: 20%;
+    justify-content: space-around;
+
+}
+
+body {
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 10%;
+}
+
+.a-budget {
+    align-self: flex-end;
+    margin-top: 10px;
+}
+
+h1 {
+    align-self: center;
+}
+
+
+.main-body {
+    height: 90%;
+}
+
+
+
+.pie-chart {
+    height: 45%;
+}
+
+.digit {
+    flex-grow: 1;
+    height: 60%;
+    align-self: center;
+    margin: 5px;
+}
+
+.purchase-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+}
+
+form {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+
+    h1 {
+        align-self: flex-start;
+    
+    }
+
+    .remaining-budget{
+        width: 50%;
+        float: right;
+    }
+
+   .clearfix{
+       clear: both;
+   }
+
+   .sidebar {
+       float: left;
+       height: 100%;
+       width: 10%;
+   }
+
+   .pie-chart {
+       float: right;
+       width: 85%;
+   }
+
+
+}
