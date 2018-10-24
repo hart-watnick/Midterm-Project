@@ -4,6 +4,10 @@
     margin: 0;
 }
 
+.sidebar {
+    display: none;
+}
+
 .remaining-budget {
 
     display: flex;
@@ -79,15 +83,36 @@ form {
    }
 
    .sidebar {
+       display: flex;
+       flex-direction: column;
        float: left;
        height: 100%;
-       width: 10%;
+       width: 14%;
+   }
+
+   .category {
+       flex-grow: 1;
    }
 
    .pie-chart {
        float: right;
        width: 85%;
+       height: 65%;
    }
 
+   .purchase-btn {
+       display: none;
+   }
+
+   .addItem {
+       display: flex;
+       justify-content: space-around;
+       float: right;
+       width: 85%;
+   }
+
+   .itemName {
+       flex-grow: 2;
+   }
 
 }
