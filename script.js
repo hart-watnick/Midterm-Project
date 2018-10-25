@@ -48,14 +48,14 @@ $(document).ready(() => {
             category: "Food"
         }
     ];
-
+    let budget = 1000000;
     // This function creates totals by category
     const categoryTotals = (purchases) => {
         let food = 0,
             attire = 0,
             bills = 0,
             weapons = 0;
-            // catTotals = [];
+        // catTotals = [];
         for (let purchase of purchases) {
             switch (purchase.category) {
                 case "Attire":
@@ -75,29 +75,58 @@ $(document).ready(() => {
             }
         }
         return [{
-            x: "Food",
-            value:food
-        },
-        {
-            x: "Attire",
-            value: attire
-        },
-        {
-            x: "Bills",
-            value: bills
-        }, 
-        { 
-            x: "Weapons",
-            value: weapons
-        }];
+                x: "Food",
+                value: food
+            },
+            {
+                x: "Attire",
+                value: attire
+            },
+            {
+                x: "Bills",
+                value: bills
+            },
+            {
+                x: "Weapons",
+                value: weapons
+            }
+        ];
     };
 
     let chartData = categoryTotals(purchases);
-    console.log(chartData);
 
+    const budgetRemaining = (categoryTotals) => {
+        let grandTotal = 0,
+            placeValues = [];
+
+        for (let category of categoryTotals) {
+            grandTotal += category.value;
+        }
+        grandTotal = budget - grandTotal;
+        placeValues[0] = Math.floor(grandTotal / 1000000);
+        grandTotal -= (placeValues[0] * 1000000);
+        placeValues[1] = Math.floor(grandTotal / 100000);
+        grandTotal -= (placeValues[1] * 100000);
+        placeValues[2] = Math.floor(grandTotal / 10000);
+        grandTotal -= (placeValues[2] * 10000);
+        placeValues[3] = Math.floor(grandTotal / 1000);
+        grandTotal -= (placeValues[3] * 1000);
+        placeValues[4] = Math.floor(grandTotal / 100);
+        grandTotal -= (placeValues[4] * 100);
+        placeValues[5] = Math.floor(grandTotal / 10);
+        grandTotal -= (placeValues[5] * 10);
+        placeValues[6] = grandTotal;
+        console.log(placeValues);
+        for (let i = 1; i < $(".digit").length; i++) {
+            $(".digit")[i].children[0].textContent = `${placeValues[i-1]}`;
+        }
+    }
+    console.log($(chartData));
+    budgetRemaining(chartData);
     // Creates pie chart populated with initial values 
     anychart.onDocumentReady(function () {
         let chart = anychart.pie();
+        chart.palette(anychart.palettes.blue);
         chart.title("");
         chart.data(chartData);
         chart.container('container');
@@ -121,13 +150,8 @@ $(document).ready(() => {
         chart.data(chartData);
         chart.container('container');
         chart.draw();
-        // anychart.(function () {
-        //     let chart = anychart.pie();
-        //     chart.title("");
-        //     chart.data(chartData);
-        //     chart.container('container');
-        //     chart.draw();
-        // });
+
+        budgetRemaining(chartData);
     });
 
 
