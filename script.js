@@ -178,16 +178,68 @@ console.log($(window).width());
         }
     });
 
-    $(document).on("click", ".weapons", (event) => {
+    $(document).on("mouseenter", ".weapons", (event) => {
         $(".weapons").append(`
-        <section class="weapons-list"></section> 
+        <section class="purchase-list"></section> 
         `);
 
         for (let purchase of purchases) {
             if (purchase.category === "Weapons") {
-                $(".weapons-list").append(`<p>${purchase.name} $${purchase.price}</p>`);
+                $(".purchase-list").append(`<p>${purchase.name} : $${purchase.price}</p>`);
             }
         }
+    });
+
+    $(document).on("mouseleave", ".weapons", (event) => {
+        $(".purchase-list").remove("");
+    });
+
+    $(document).on("mouseenter", ".food", (event) => {
+        $(".food").append(`
+        <section class="purchase-list"></section> 
+        `);
+
+        for (let purchase of purchases) {
+            if (purchase.category === "Food") {
+                $(".purchase-list").append(`<p>${purchase.name} : $${purchase.price}</p>`);
+            }
+        }
+    });
+
+    $(document).on("mouseleave", ".food", (event) => {
+        $(".purchase-list").remove("");
+    });
+
+    $(document).on("mouseenter", ".attire", (event) => {
+        $(".attire").append(`
+        <section class="purchase-list"></section> 
+        `);
+
+        for (let purchase of purchases) {
+            if (purchase.category === "Attire") {
+                $(".purchase-list").append(`<p>${purchase.name} : $${purchase.price}</p>`);
+            }
+        }
+    });
+
+    $(document).on("mouseleave", ".attire", (event) => {
+        $(".purchase-list").remove("");
+    });
+
+    $(document).on("mouseenter", ".bills", (event) => {
+        $(".bills").append(`
+        <section class="purchase-list"></section> 
+        `);
+
+        for (let purchase of purchases) {
+            if (purchase.category === "Bills") {
+                $(".purchase-list").append(`<p>${purchase.name} : $${purchase.price}</p>`);
+            }
+        }
+    });
+
+    $(document).on("mouseleave", ".bills", (event) => {
+        $(".purchase-list").remove("");
     });
 
 });
