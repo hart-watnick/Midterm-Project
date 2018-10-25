@@ -1,4 +1,4 @@
-*{
+* {
     border: 1px solid black;
     padding: 0;
     margin: 0;
@@ -213,10 +213,10 @@ form {
     
     h1 {
         align-self: flex-start;
-    
+
     }
 
-    .remaining-budget{
+    .remaining-budget {
         width: 50%;
         float: right;
     }
@@ -278,7 +278,7 @@ form {
 
    .itemName {
        flex-grow: 2;
-   }
+  }
 
 }
 
