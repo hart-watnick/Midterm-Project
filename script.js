@@ -206,6 +206,11 @@ $(document).ready(() => {
         }
     });
 
+
+    $(document).on("mouseenter", "button , .sidebar", (event) => {
+        $(event.target).css("cursor", "pointer");
+    })
+
     $(document).on("mouseleave", ".weapons", (event) => {
         $(".purchase-list").remove("");
     });
@@ -257,5 +262,4 @@ $(document).ready(() => {
     $(document).on("mouseleave", ".bills", (event) => {
         $(".purchase-list").remove("");
     });
-
 });
