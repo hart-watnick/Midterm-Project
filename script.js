@@ -1,33 +1,158 @@
 "use strict";
 
 $(document).ready(() => {
-    anychart.onDocumentReady(function() {
-
-        let data = [{
+    // Creates list of initial purchases
+    const purchases = [{
+            name: "Pants for Bruce",
+            price: 60,
+            category: "Attire"
+        },
+        {
+            name: "Parking Ticket",
+            price: 100,
+            category: "Bills"
+        },
+        {
+            name: "Pants for Bruce",
+            price: 60,
+            category: "Attire"
+        },
+        {
+            name: "Shawarma",
+            price: 20,
+            category: "Food"
+        },
+        {
+            name: "Missiles",
+            price: 3000,
+            category: "Weapons"
+        },
+        {
+            name: "Pants for Bruce",
+            price: 60,
+            category: "Attire"
+        },
+        {
+            name: "Hawkeye",
+            price: 400,
+            category: "Weapons"
+        },
+        {
+            name: "City Repairs",
+            price: 10000,
+            category: "Bills"
+        },
+        {
+            name: "Thor's Bar Tab",
+            price: 600,
+            category: "Food"
+        }
+    ];
+    let budget = 1000000;
+    // This function creates totals by category
+    const categoryTotals = (purchases) => {
+        let food = 0,
+            attire = 0,
+            bills = 0,
+            weapons = 0;
+        // catTotals = [];
+        for (let purchase of purchases) {
+            switch (purchase.category) {
+                case "Attire":
+                    attire += Number(purchase.price);
+                    break;
+                case "Food":
+                    food += Number(purchase.price);
+                    break;
+                case "Bills":
+                    bills += Number(purchase.price);
+                    break;
+                case "Weapons":
+                    weapons += Number(purchase.price);
+                    break;
+                default:
+                    break;
+            }
+        }
+        return [{
                 x: "Food",
-                value: 25
+                value: food
             },
             {
-                x: "Entertainment",
-                value: 25
-            },
-            {
-                x: "Clothing",
-                value: 25
+                x: "Attire",
+                value: attire
             },
             {
                 x: "Bills",
-                value: 25
+                value: bills
+            },
+            {
+                x: "Weapons",
+                value: weapons
             }
         ];
+    };
 
+    let chartData = categoryTotals(purchases);
+
+    const budgetRemaining = (categoryTotals) => {
+        let grandTotal = 0,
+            placeValues = [];
+
+        for (let category of categoryTotals) {
+            grandTotal += category.value;
+        }
+        grandTotal = budget - grandTotal;
+        placeValues[0] = Math.floor(grandTotal / 1000000);
+        grandTotal -= (placeValues[0] * 1000000);
+        placeValues[1] = Math.floor(grandTotal / 100000);
+        grandTotal -= (placeValues[1] * 100000);
+        placeValues[2] = Math.floor(grandTotal / 10000);
+        grandTotal -= (placeValues[2] * 10000);
+        placeValues[3] = Math.floor(grandTotal / 1000);
+        grandTotal -= (placeValues[3] * 1000);
+        placeValues[4] = Math.floor(grandTotal / 100);
+        grandTotal -= (placeValues[4] * 100);
+        placeValues[5] = Math.floor(grandTotal / 10);
+        grandTotal -= (placeValues[5] * 10);
+        placeValues[6] = grandTotal;
+        console.log(placeValues);
+        for (let i = 1; i < $(".digit").length; i++) {
+            $(".digit")[i].children[0].textContent = `${placeValues[i-1]}`;
+        }
+    }
+    console.log($(chartData));
+    budgetRemaining(chartData);
+    // Creates pie chart populated with initial values 
+    anychart.onDocumentReady(function () {
         let chart = anychart.pie();
+        chart.palette(anychart.palettes.blue);
         chart.title("");
-        chart.data(data);
+        chart.data(chartData);
         chart.container('container');
         chart.draw();
     });
 
+    // Adds new purchases to purchase array and redraws chart with ne info
+    $(document).on("click", ".category-btn", (event) => {
+        let newItem = {
+            name: $(".itemName")[0].value,
+            price: Number($(".price")[0].value),
+            category: $(".catSelector")[0].value
+        };
+
+        $(".pie-chart").empty().append(`<div id="container" style="width: 100%; height: 100%"></div>`);
+
+        purchases.push(newItem);
+        chartData = categoryTotals(purchases);
+        let chart = anychart.pie();
+        chart.title("");
+        chart.data(chartData);
+        chart.container('container');
+        chart.draw();
+
+        budgetRemaining(chartData);
+    });
 
 
 });
