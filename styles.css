@@ -25,12 +25,68 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
     height: 10%;
+    background-color: #C6273D;
+}
+
+
+
+.title-container {
+    text-align: center;
+    border: none;
+    position: relative;
+    background-color: #307AAD;
+    width: 33%;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 0px;
+}
+
+.title {
+    text-align: center;
+    font-size: 29px;
+    font-weight: bold;
+    border: none;
+    color: whitesmoke;
 }
 
 .a-budget {
-    align-self: flex-end;
-    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+        border: none;
+        position: absolute;
+        right: 10px;
+        top: 45px;
+        transform: rotate(-12deg);
+        color: lime;
+}
+
+.icons {
+    position: absolute;
+    height: 8%;
+    right: 0px;
+    width: 60%;
+    background-color: white;
+}
+
+.non-mobile-banner1 {
+    display: none;
+
+}
+
+.non-mobile-banner2 {
+    display: none;
+
+}
+
+.non-mobile-banner3 {
+    display: none;
+}
+
+.non-mobile-banner4 {
+    display: none;
 }
 
 h1 {
@@ -66,8 +122,94 @@ form {
     display: none;
 }
 
+ @font-face {
+    font-family: "Avengers";
+     src: 
+    url("./Fonts/AVENGEANCE\ HEROIC\ AVENGER.otf") format("otf"),
+    url("./Fonts/AVENGEANCE\ HEROIC\ AVENGER.ttf") format("ttf"),
+    url("./Fonts/ HEROIC\ AVENGER\ BD.otf") format("otf"),
+    url("./Fonts/AVENGEANCE\ HEROIC\ AVENGER\ AT.otf") format("otft"),
+    url("./Fonts/AVENGEANCE\ HEROIC\ AVENGER\ AT.ttf") format("ttf"),
+    url("./Fonts/AVENGEANCE\ HEROIC\ AVENGER\ BD.ttf") format("ttf"),
+    url("./Fonts/AVENGEANCE\ HEROIC\ AVENGER\ BI.otf") format("otf"),
+    url("./Fonts/AVENGEANCE\ HEROIC\ AVENGER\ BI.ttf") format("ttf");
+    } 
+    
+    
+    p {
+        font-family: 'Avengers';
+        color: red;
+    }
+
+    h1 {
+        font-family: 'Avengers';
+    }
+
 @media only screen and (min-width: 768px) {
 
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 10%;
+        background-color: #C6273D;
+    }
+    
+    .title-container {
+        border: none;
+        position: relative;
+        background-color: #307AAD;
+        padding: 13px;
+        padding-left: 45px;
+        padding-right: 45px;
+        border-radius: 10px;
+    }
+    
+    .title {
+        border: none;
+        font-size: 35px;
+        color: whitesmoke;
+    }
+    
+     .a-budget {
+        /* align-self: flex-end; */
+        margin-top: 10px;
+        font-size: 18px;
+        border: none;
+        position: absolute;
+        right: -1px;
+        top: 60px;
+        transform: rotate(-12deg);
+        color: lime;
+    }
+
+     .icons {
+        position: absolute;
+        display: none;
+    }
+    
+    
+    .non-mobile-banner1 {
+        position: absolute;
+        height: 10%;
+        width: 10%;
+        left: 100px;
+        background-color: white;
+        border-radius: 50px;
+        display: block;
+    }
+    
+    .non-mobile-banner2 {
+        position: absolute;
+        height: 10%;
+        width: 10%;
+        right: 100px;
+        background-color: white;
+        border-radius: 50px;
+        display: block;
+    }
+    
     h1 {
         align-self: flex-start;
     
@@ -116,3 +258,62 @@ form {
    }
 
 }
+
+@media only screen and (min-width: 1000px) {
+
+    .a-budget {
+        /* align-self: flex-end;
+        margin-top: 10px; */
+        font-size: 18px;
+        border: none;
+        position: absolute;
+        right: -1px;
+        top: 40px;
+        transform: rotate(-12deg);
+        color: lime;
+    }
+
+    .icons {
+        position: absolute;
+        display: none;
+    }
+    
+
+    .non-mobile-banner1 {
+        position: absolute;
+        height: 10%;
+        width: 6%;
+        left: 5%;
+        background-color: white;
+        border-radius: 53px;
+    }
+    
+    .non-mobile-banner2 {
+        position: absolute;
+        height: 10%;
+        width: 6%;
+        right: 5%;
+        background-color: white;
+        border-radius: 53px;
+    }
+
+    .non-mobile-banner3 {
+        position: absolute;
+        height: 10%;
+        width: 6%;
+        left: 20%;
+        background-color: white;
+        border-radius: 53px;
+        display: block;
+    }
+    
+    .non-mobile-banner4 {
+        position: absolute;
+        height: 10%;
+        width: 6%;
+        right: 20%;
+        background-color: white;
+        border-radius: 53px;
+        display: block;
+    }
+    }
