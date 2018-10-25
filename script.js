@@ -3,50 +3,50 @@
 $(document).ready(() => {
     // Creates list of initial purchases
     const purchases = [{
-            name: "Pants for Bruce",
-            price: 60,
-            category: "Attire"
-        },
-        {
-            name: "Parking Ticket",
-            price: 100,
-            category: "Bills"
-        },
-        {
-            name: "Pants for Bruce",
-            price: 60,
-            category: "Attire"
-        },
-        {
-            name: "Shawarma",
-            price: 20,
-            category: "Food"
-        },
-        {
-            name: "Missiles",
-            price: 3000,
-            category: "Weapons"
-        },
-        {
-            name: "Pants for Bruce",
-            price: 60,
-            category: "Attire"
-        },
-        {
-            name: "Hawkeye",
-            price: 400,
-            category: "Weapons"
-        },
-        {
-            name: "City Repairs",
-            price: 10000,
-            category: "Bills"
-        },
-        {
-            name: "Thor's Bar Tab",
-            price: 600,
-            category: "Food"
-        }
+        name: "Pants for Bruce",
+        price: 60,
+        category: "Attire"
+    },
+    {
+        name: "Parking Ticket",
+        price: 100,
+        category: "Bills"
+    },
+    {
+        name: "Pants for Bruce",
+        price: 60,
+        category: "Attire"
+    },
+    {
+        name: "Shawarma",
+        price: 20,
+        category: "Food"
+    },
+    {
+        name: "Missiles",
+        price: 3000,
+        category: "Weapons"
+    },
+    {
+        name: "Pants for Bruce",
+        price: 60,
+        category: "Attire"
+    },
+    {
+        name: "Hawkeye",
+        price: 400,
+        category: "Weapons"
+    },
+    {
+        name: "City Repairs",
+        price: 10000,
+        category: "Bills"
+    },
+    {
+        name: "Thor's Bar Tab",
+        price: 600,
+        category: "Food"
+    }
     ];
     let budget = 1000000;
     // This function creates totals by category
@@ -75,21 +75,21 @@ $(document).ready(() => {
             }
         }
         return [{
-                x: "Food",
-                value: food
-            },
-            {
-                x: "Attire",
-                value: attire
-            },
-            {
-                x: "Bills",
-                value: bills
-            },
-            {
-                x: "Weapons",
-                value: weapons
-            }
+            x: "Food",
+            value: food
+        },
+        {
+            x: "Attire",
+            value: attire
+        },
+        {
+            x: "Bills",
+            value: bills
+        },
+        {
+            x: "Weapons",
+            value: weapons
+        }
         ];
     };
 
@@ -118,7 +118,7 @@ $(document).ready(() => {
         placeValues[6] = grandTotal;
         console.log(placeValues);
         for (let i = 1; i < $(".digit").length; i++) {
-            $(".digit")[i].children[0].textContent = `${placeValues[i-1]}`;
+            $(".digit")[i].children[0].textContent = `${placeValues[i - 1]}`;
         }
     }
     console.log($(chartData));
@@ -141,6 +141,11 @@ $(document).ready(() => {
             category: $(".catSelector")[0].value
         };
 
+        if ($(window).width() <= 768) {
+            $(".addItem")
+                .fadeOut("slow");
+        }
+
         $(".pie-chart").empty().append(`<div id="container" style="width: 100%; height: 100%"></div>`);
 
         purchases.push(newItem);
@@ -155,5 +160,30 @@ $(document).ready(() => {
         budgetRemaining(chartData);
     });
 
+    $(document).on("click", ".purchase-btn", (event) => {
+        $(".addItem")
+            .fadeIn("slow")
+            .css("display", "flex");
+    });
+
+    $(window).resize(function () {
+        if ($(window).width() > 768) {
+            $(".addItem").css("display", "flex");
+        } else {
+            $(".addItem").css("display", "none");
+        }
+    });
+
+    $(document).on("click", ".weapons", (event) => {
+        $(".weapons").append(`
+        <section class="weapons-list"></section> 
+        `);
+
+        for (let purchase of purchases) {
+            if (purchase.category === "Weapons") {
+                $(".weapons-list").append(`<p>${purchase.name} $${purchase.price}</p>`);
+            }
+        }
+    });
 
 });
