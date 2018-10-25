@@ -1,7 +1,6 @@
 "use strict";
 
 $(document).ready(() => {
-console.log($(window).width());
     // Creates list of initial purchases
     const purchases = [{
             name: "Pants for Bruce",
@@ -77,21 +76,21 @@ console.log($(window).width());
             }
         }
         return [{
-            x: "Food",
-            value: food
-        },
-        {
-            x: "Attire",
-            value: attire
-        },
-        {
-            x: "Bills",
-            value: bills
-        },
-        {
-            x: "Weapons",
-            value: weapons
-        }
+                x: "Food",
+                value: food
+            },
+            {
+                x: "Attire",
+                value: attire
+            },
+            {
+                x: "Bills",
+                value: bills
+            },
+            {
+                x: "Weapons",
+                value: weapons
+            }
         ];
     };
 
@@ -100,6 +99,14 @@ console.log($(window).width());
     const budgetRemaining = (categoryTotals) => {
         let grandTotal = 0,
             placeValues = [];
+
+        let options = {
+            useEasing: true,
+            useGrouping: false,
+            separator: ',',
+            decimal: '.',
+        };
+        
 
         for (let category of categoryTotals) {
             grandTotal += category.value;
@@ -121,6 +128,7 @@ console.log($(window).width());
         for (let i = 1; i < $(".digit").length; i++) {
             $(".digit")[i].children[0].textContent = `${placeValues[i - 1]}`;
         }
+
     }
 
     budgetRemaining(chartData);
@@ -160,8 +168,8 @@ console.log($(window).width());
         chart.draw();
         $("#ticker")[0].play();
         budgetRemaining(chartData);
-        
-        
+
+
     });
 
     $(document).on("click", ".purchase-btn", (event) => {
@@ -180,12 +188,12 @@ console.log($(window).width());
 
     $(document).on("click", ".weapons", (event) => {
         $(".weapons").append(`
-        <section class="weapons-list"></section> 
+        <section class="purchase-list"></section> 
         `);
 
         for (let purchase of purchases) {
             if (purchase.category === "Weapons") {
-                $(".weapons-list").append(`<p>${purchase.name} $${purchase.price}</p>`);
+                $(".purchase-list").append(`<p>${purchase.name} $${purchase.price}</p>`);
             }
         }
     });
