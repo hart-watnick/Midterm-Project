@@ -6,13 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">         
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header>
-        <h1>Avengers Assemble</h1>
-        <p class="a-budget"> A Budget</p>
+        <img class="non-mobile-banner1" src="./images/avengers-logo-silver.jpg"/>
+        <img class="non-mobile-banner2" src="./images/avengers-logo-silver.jpg"/>
+        <img class="icons" src="./images/AvengersCharIcons.jpg"/>
+        <section class="title-container">
+          <h1 class="title">Avengers Assemble</h1>
+          <p class="a-budget"> A Budget</p>
+        </section>
+        <img class="non-mobile-banner3" src="./images/avengers-logo-silver.jpg"/>
+        <img class="non-mobile-banner4" src="./images/avengers-logo-silver.jpg"/>
     </header>
 
     <section class="main-body">
@@ -29,10 +37,10 @@
         </section>
 
         <section class="sidebar">
-            <section class="category"></section>
-            <section class="category"></section>
-            <section class="category"></section>
-            <section class="category"></section>
+            <section class="category food">Food</section>
+            <section class="category weapons">Weapons</section>        
+            <section class="category attire">Attire</section>
+            <section class="category bills">Bills</section>
         </section>
 
         <section class="pie-chart">
@@ -44,13 +52,13 @@
         </section>
 
         <form class="addItem">
-            <input type="text" placeholder="$">
+            <input class ="price" type="text" placeholder="$">
             <input class="itemName" type="text" placeholder="Name">
-            <select>
-                <option value="Entertainment" class="choice"></option>
-                <option value="Food" class="choice"></option>
-                <option value="Clothing" class="choice"></option>
-                <option value="Bills" class="choice"></option>
+            <select class="catSelector">
+                <option value="Weapons" class="choice">Weapons</option>
+                <option value="Food" class="choice">Food</option>
+                <option value="Clothing" class="choice">Clothing</option>
+                <option value="Bills" class="choice">Bills</option>
             </select>
             <button class="category-btn" type="button">Add Item</button>
         </form>
