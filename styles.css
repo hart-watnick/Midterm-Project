@@ -317,8 +317,17 @@ body {
        height: 100%;
        width: 14%;
        font-size: 30px;
-       color:slategray;
+       color:black;
 
+   }
+   .box-label{
+        transform: rotate(-2deg);
+        margin:15px;
+        padding:0 5px;
+        float:left;
+        background:#ddd;
+        border:1px solid #222;
+        box-shadow:3px 3px 0 #222;
    }
    .food{
         outline: 2px solid black;
@@ -512,4 +521,3 @@ body {
    
         
 }
-    
