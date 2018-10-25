@@ -155,6 +155,10 @@ $(document).ready(() => {
             $(".addItem")
                 .fadeOut("slow");
         }
+        
+        $("input").each(function(){
+            $(this).val("");
+        })
 
         $(".pie-chart").empty().append(`<div id="container" style="width: 100%; height: 100%"></div>`);
 
@@ -172,6 +176,7 @@ $(document).ready(() => {
 
     });
 
+
     $(document).on("click", ".purchase-btn", (event) => {
         $(".addItem")
             .fadeIn("slow")
@@ -186,16 +191,71 @@ $(document).ready(() => {
         }
     });
 
-    $(document).on("click", ".weapons", (event) => {
+    //Opens a list of purchased items when hovering over the categories
+
+    $(document).on("mouseenter", ".weapons", (event) => {
         $(".weapons").append(`
         <section class="purchase-list"></section> 
         `);
 
         for (let purchase of purchases) {
             if (purchase.category === "Weapons") {
-                $(".purchase-list").append(`<p>${purchase.name} $${purchase.price}</p>`);
+
+                $(".purchase-list").append(`<p>${purchase.name} : $${purchase.price}</p>`);
             }
         }
+    });
+
+    $(document).on("mouseleave", ".weapons", (event) => {
+        $(".purchase-list").remove("");
+    });
+
+    $(document).on("mouseenter", ".food", (event) => {
+        $(".food").append(`
+        <section class="purchase-list"></section> 
+        `);
+
+        for (let purchase of purchases) {
+            if (purchase.category === "Food") {
+                $(".purchase-list").append(`<p>${purchase.name} : $${purchase.price}</p>`);
+            }
+        }
+    });
+
+    $(document).on("mouseleave", ".food", (event) => {
+        $(".purchase-list").remove("");
+    });
+
+    $(document).on("mouseenter", ".attire", (event) => {
+        $(".attire").append(`
+        <section class="purchase-list"></section> 
+        `);
+
+        for (let purchase of purchases) {
+            if (purchase.category === "Attire") {
+                $(".purchase-list").append(`<p>${purchase.name} : $${purchase.price}</p>`);
+            }
+        }
+    });
+
+    $(document).on("mouseleave", ".attire", (event) => {
+        $(".purchase-list").remove("");
+    });
+
+    $(document).on("mouseenter", ".bills", (event) => {
+        $(".bills").append(`
+        <section class="purchase-list"></section> 
+        `);
+
+        for (let purchase of purchases) {
+            if (purchase.category === "Bills") {
+                $(".purchase-list").append(`<p>${purchase.name} : $${purchase.price}</p>`);
+            }
+        }
+    });
+
+    $(document).on("mouseleave", ".bills", (event) => {
+        $(".purchase-list").remove("");
     });
 
 });
