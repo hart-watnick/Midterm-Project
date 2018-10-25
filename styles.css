@@ -33,7 +33,13 @@ header {
     border-radius: 0px;
 }
 
-.title {
+.lawsuit-bait {
+    margin-top: 5px;
+    height: 64%;
+    width: 90%;
+}
+
+/* .title {
     text-shadow: -1px -1px #C6273D, 1px 1px #C6273D,  2px 2px orange;
     align-self: center;
     text-align: center;
@@ -41,10 +47,10 @@ header {
     font-weight: bold;
     border: none;
     color: whitesmoke;
-}
+} */
 
 .a-budget{
-    font-size: 23px;
+    font-size: 18px;
     text-shadow: -1px -1px #C6273D, 1px 1px #C6273D,  2px 2px orange;
     color: white;
 }
@@ -79,9 +85,17 @@ h1 {
     align-self: center;
 }
 
+                            /*End Header*/
+
+body {
+    height: 100vh;
+}
+
 .main-body{
+    height: 90%;
     background-image: url("./images/background5.jpg");
     /* background-size: cover; */
+    position: relative;
 }
 
 .sidebar {
@@ -105,6 +119,22 @@ body {
 }
 
 
+.label-box{
+    display: inline-block;
+    text-align: center;
+    height: 10%;
+    min-width: 100px;
+    width: 40%;
+    position: relative;
+    left: 30%;
+    transform: rotate(-2deg);
+    margin-top:10px;
+    padding:0 5px;
+    background:white;
+    border:1px solid #222;
+    box-shadow:3px 3px 0 #222; 
+    font-size: 40px;
+}
 
 .pie-chart {
     height: 45%;
@@ -113,6 +143,7 @@ body {
 }
 
 .digit {
+    transform: rotate(-1deg);
     background-color: white;
     flex-grow: 1;
     height: 60%;
@@ -120,7 +151,8 @@ body {
     margin: 5px;
     outline: 6px solid white;
     border: 3px solid black;
-}
+    }
+
 .num{
     background-color: white;
     color: black;
@@ -153,8 +185,8 @@ body {
     font-size: 10px;
     border-radius: 5px;
     box-shadow: 0px 0px 31px 1px rgba(0,0,0,0.3);
-
 }
+
 .itemPrice {
     justify-self: flex-start;
     align-self: center;
@@ -166,6 +198,7 @@ body {
     background-color: transparent;
     border: none;
 }
+
 .itemName {
     width: 100%;
     background-color:transparent;
@@ -175,7 +208,6 @@ body {
     padding-left: 10px;
     height: 35px;
     font-size: 20px;
-    
 }
 
 .catSelector {
@@ -187,6 +219,7 @@ body {
     height: 45px;
     align-self: center;
 }
+
 .category-btn {
     width: 100%;
     margin-left: 10%;
@@ -204,12 +237,7 @@ body {
     font-size: 20px;
     padding-bottom: 0px;
     padding-left: 5px;
-    
-
-    
-    
 }
-
 
 @media only screen and (min-width: 768px) {
 
@@ -231,9 +259,15 @@ body {
         padding-right: 25px;
         border-radius: 10px;
     }
+
+    .lawsuit-bait {
+        margin-top: 13px;
+        height: 60%;
+        width: 85%;
+    }
     
-    .title {
-        /* border: none;*/
+    /* .title {
+        border: none;
         font-size: 35px;
         font-family: "Bangers";
         margin-top: 5%;
@@ -243,10 +277,9 @@ body {
         -ms-transform: rotate(-5deg) skew(-5deg, 0);
         -o-transform: rotate(-5deg) skew(-5deg, 0);
         transform: rotate(-5deg) skew(-5deg, 0);
-        /* padding-bottom: 10px; */
         float: left;
         width: 100%;
-    }
+    } */
 
     .a-budget {
             font-size: 22px;
@@ -284,6 +317,14 @@ body {
         border-radius: 50px;
         display: block;
         border: 1px solid black;
+    }
+
+    .non-mobile-banner3 {
+        display: none;
+    }
+    
+    .non-mobile-banner4 {
+        display: none;
     }
     
     h1 {
@@ -354,6 +395,8 @@ body {
        float: right;
        width: 85%;
        height: 65%;
+       outline: 4px solid white;
+       border: 2px solid black;
    }
 
    .purchase-btn {
@@ -367,12 +410,9 @@ body {
        width: 85%;
    }
    
-   
-
    .itemName {
        flex-grow: 2;
   }
-
 
     .addItem {
         display: flex;
@@ -449,11 +489,19 @@ body {
 
 }
 
+
+
 @media only screen and (min-width: 1200px) {
 
-    .title {
-        /* border: none;*/
+    /* .title {
+         border: none;
         font-size: 36px;
+    } */
+
+    .lawsuit-bait {
+        margin-top: 20px;
+        height: 60%;
+        width: 85%;
     }
 
     .a-budget{
@@ -465,7 +513,6 @@ body {
         display: none;
     }
     
-
     .non-mobile-banner1 {
         position: absolute;
         height: 9%;
@@ -506,6 +553,14 @@ body {
         border-radius: 53px;
         display: block;
         border: 1px solid black;
+    }
+
+    .label-box{
+        position: absolute;
+        left: 15%;
+        top: 5%;
+        max-width: 400px;
+        font-size:50px;
     }
     
     
@@ -587,5 +642,5 @@ body {
     
 
    
-        
+       
 }
