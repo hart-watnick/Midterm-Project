@@ -48,6 +48,7 @@ console.log($(window).width());
             price: 600,
             category: "Food"
         }
+
     ];
     let budget = 1000000;
     // This function creates totals by category
@@ -76,21 +77,21 @@ console.log($(window).width());
             }
         }
         return [{
-                x: "Food",
-                value: food
-            },
-            {
-                x: "Attire",
-                value: attire
-            },
-            {
-                x: "Bills",
-                value: bills
-            },
-            {
-                x: "Weapons",
-                value: weapons
-            }
+            x: "Food",
+            value: food
+        },
+        {
+            x: "Attire",
+            value: attire
+        },
+        {
+            x: "Bills",
+            value: bills
+        },
+        {
+            x: "Weapons",
+            value: weapons
+        }
         ];
     };
 
@@ -118,7 +119,7 @@ console.log($(window).width());
         grandTotal -= (placeValues[5] * 10);
         placeValues[6] = grandTotal;
         for (let i = 1; i < $(".digit").length; i++) {
-            $(".digit")[i].children[0].textContent = `${placeValues[i-1]}`;
+            $(".digit")[i].children[0].textContent = `${placeValues[i - 1]}`;
         }
     }
 
@@ -142,6 +143,11 @@ console.log($(window).width());
             category: $(".catSelector")[0].value
         };
 
+        if ($(window).width() <= 768) {
+            $(".addItem")
+                .fadeOut("slow");
+        }
+
         $(".pie-chart").empty().append(`<div id="container" style="width: 100%; height: 100%"></div>`);
 
         purchases.push(newItem);
@@ -157,4 +163,31 @@ console.log($(window).width());
         
         
     });
+
+    $(document).on("click", ".purchase-btn", (event) => {
+        $(".addItem")
+            .fadeIn("slow")
+            .css("display", "flex");
+    });
+
+    $(window).resize(function () {
+        if ($(window).width() > 768) {
+            $(".addItem").css("display", "flex");
+        } else {
+            $(".addItem").css("display", "none");
+        }
+    });
+
+    $(document).on("click", ".weapons", (event) => {
+        $(".weapons").append(`
+        <section class="weapons-list"></section> 
+        `);
+
+        for (let purchase of purchases) {
+            if (purchase.category === "Weapons") {
+                $(".weapons-list").append(`<p>${purchase.name} $${purchase.price}</p>`);
+            }
+        }
+    });
+
 });
