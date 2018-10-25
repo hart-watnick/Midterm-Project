@@ -69,13 +69,14 @@
         </section>
 
         <form class="addItem">
-            <input type="text" placeholder="$">
+            <span class= itemPrice>$</span>
+            <input class= "priceInput"  type="text">
             <input class="itemName" type="text" placeholder="Name">
-            <select>
-                <option value="Entertainment" class="choice"></option>
-                <option value="Food" class="choice"></option>
-                <option value="Clothing" class="choice"></option>
-                <option value="Bills" class="choice"></option>
+            <select class= "category-choice">
+                <option value="Weapons" class="choice">Weapons</option>
+                <option value="Food" class="choice">Food</option>
+                <option value="Attire" class="choice">Attire</option>
+                <option value="Bills" class="choice">Bills</option>
             </select>
             <button class="category-btn" type="button">Add Item</button>
         </form>
