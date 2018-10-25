@@ -1,52 +1,54 @@
 "use strict";
 
 $(document).ready(() => {
+console.log($(window).width());
     // Creates list of initial purchases
     const purchases = [{
-        name: "Pants for Bruce",
-        price: 60,
-        category: "Attire"
-    },
-    {
-        name: "Parking Ticket",
-        price: 100,
-        category: "Bills"
-    },
-    {
-        name: "Pants for Bruce",
-        price: 60,
-        category: "Attire"
-    },
-    {
-        name: "Shawarma",
-        price: 20,
-        category: "Food"
-    },
-    {
-        name: "Missiles",
-        price: 3000,
-        category: "Weapons"
-    },
-    {
-        name: "Pants for Bruce",
-        price: 60,
-        category: "Attire"
-    },
-    {
-        name: "Hawkeye",
-        price: 400,
-        category: "Weapons"
-    },
-    {
-        name: "City Repairs",
-        price: 10000,
-        category: "Bills"
-    },
-    {
-        name: "Thor's Bar Tab",
-        price: 600,
-        category: "Food"
-    }
+            name: "Pants for Bruce",
+            price: 60,
+            category: "Attire"
+        },
+        {
+            name: "Parking Ticket",
+            price: 100,
+            category: "Bills"
+        },
+        {
+            name: "Pants for Bruce",
+            price: 60,
+            category: "Attire"
+        },
+        {
+            name: "Shawarma",
+            price: 20,
+            category: "Food"
+        },
+        {
+            name: "Missiles",
+            price: 3000,
+            category: "Weapons"
+        },
+        {
+            name: "Pants for Bruce",
+            price: 60,
+            category: "Attire"
+        },
+        {
+            name: "Arrow for Hawkeye",
+            price: 400,
+            category: "Weapons"
+        },
+        {
+            name: "City Repairs",
+            price: 10000,
+            category: "Bills"
+        },
+        {
+            name: "Thor's Bar Tab",
+            price: 600,
+            category: "Food"
+        }
+
     ];
     let budget = 1000000;
     // This function creates totals by category
@@ -116,18 +118,17 @@ $(document).ready(() => {
         placeValues[5] = Math.floor(grandTotal / 10);
         grandTotal -= (placeValues[5] * 10);
         placeValues[6] = grandTotal;
-        console.log(placeValues);
         for (let i = 1; i < $(".digit").length; i++) {
             $(".digit")[i].children[0].textContent = `${placeValues[i - 1]}`;
         }
     }
-    console.log($(chartData));
+
     budgetRemaining(chartData);
     // Creates pie chart populated with initial values 
     anychart.onDocumentReady(function () {
         let chart = anychart.pie();
         chart.palette(anychart.palettes.blue);
-        chart.title("");
+        chart.title(`Total Spent: $${chartData[0].value + chartData[1].value + chartData[2].value + chartData[3].value}`);
         chart.data(chartData);
         chart.container('container');
         chart.draw();
@@ -135,6 +136,7 @@ $(document).ready(() => {
 
     // Adds new purchases to purchase array and redraws chart with ne info
     $(document).on("click", ".category-btn", (event) => {
+        $("#ker-ching")[0].play();
         let newItem = {
             name: $(".itemName")[0].value,
             price: Number($(".priceInput")[0].value),
@@ -152,12 +154,14 @@ $(document).ready(() => {
         chartData = categoryTotals(purchases);
         let chart = anychart.pie();
         chart.palette(anychart.palettes.blue);
-        chart.title("");
+        chart.title(`Total Spent: $${chartData[0].value + chartData[1].value + chartData[2].value + chartData[3].value}`);
         chart.data(chartData);
         chart.container('container');
         chart.draw();
-
+        $("#ticker")[0].play();
         budgetRemaining(chartData);
+        
+        
     });
 
     $(document).on("click", ".purchase-btn", (event) => {
