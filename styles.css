@@ -1,10 +1,10 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Bangers', cursive; 
+    font-family: 'Bangers', cursive;
 }
 
-                                /*Start Header*/                                  
+/*Start Header*/
 
 header {
     display: flex;
@@ -26,7 +26,7 @@ header {
     border: none;
     position: relative;
     background-color: #307AAD;
-    width: 33%;
+    width: 36.5%;
     height: 99%;
     padding-left: 3px;
     padding-right: 3px;
@@ -39,19 +39,10 @@ header {
     width: 90%;
 }
 
-/* .title {
-    text-shadow: -1px -1px #C6273D, 1px 1px #C6273D,  2px 2px orange;
-    align-self: center;
-    text-align: center;
-    font-size: 28px;
-    font-weight: bold;
-    border: none;
-    color: whitesmoke;
-} */
-
 .a-budget{
     font-size: 18px;
-    text-shadow: -1px -1px #C6273D, 1px 1px #C6273D,  2px 2px orange;
+    text-shadow: -1px -1px #C6273D, 1px 1px #C6273D,  2px 2px #C6273D;
+
     color: white;
 }
 
@@ -85,13 +76,13 @@ h1 {
     align-self: center;
 }
 
-                            /*End Header*/
+/*End Header*/
 
 body {
     height: 100vh;
 }
 
-.main-body{
+.main-body {
     height: 90%;
     background-image: url("./images/background5.jpg");
     /* background-size: cover; */
@@ -107,7 +98,6 @@ body {
     flex-direction: row;
     height: 20%;
     justify-content: space-around;
-
 }
 
 body {
@@ -119,7 +109,7 @@ body {
 }
 
 
-.label-box{
+.label-box {
     display: inline-block;
     text-align: center;
     height: 10%;
@@ -128,11 +118,11 @@ body {
     position: relative;
     left: 30%;
     transform: rotate(-2deg);
-    margin-top:10px;
-    padding:0 5px;
-    background:white;
-    border:1px solid #222;
-    box-shadow:3px 3px 0 #222; 
+    margin-top: 10px;
+    padding: 0 5px;
+    background: white;
+    border: 1px solid #222;
+    box-shadow: 3px 3px 0 #222;
     font-size: 40px;
 }
 
@@ -151,9 +141,9 @@ body {
     margin: 5px;
     outline: 6px solid white;
     border: 3px solid black;
-    }
+}
 
-.num{
+.num {
     background-color: white;
     color: black;
     width: 100%;
@@ -168,7 +158,32 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 10%;
+    height: 15%;
+}
+
+.purchase {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 8%;
+    height: 50px;
+    width: 200px;
+    transform: rotate(-2deg);
+    box-shadow:3px 3px 0 black;
+}
+
+.SmollIronMan {
+    /* transform: rotate(-2deg); */
+    border-radius: 30px;
+    width: 35px;
+    height: 35px;
+}
+
+.SmollCapt {
+    /* transform: rotate(-2deg); */
+    border-radius: 30px;
+    width: 35px;
+    height: 35px;
 }
 
 .addItem {
@@ -180,11 +195,11 @@ body {
     height: 40%;
     position: relative;
     bottom: 265px;
-    background-color:rgba(255, 255, 255, 0.8);
-    padding: 5px; 
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    font-size: 10px;
     border-radius: 5px;
-    box-shadow: 0px 0px 31px 1px rgba(0,0,0,0.3);
-
+    box-shadow: 0px 0px 31px 1px rgba(0, 0, 0, 0.3);
 }
 
 .itemPrice {
@@ -194,14 +209,14 @@ body {
     width: 3%;
     font-size: 20px;
     font-weight: 400;
-    color: #78866B; 
+    color: #78866B;
     background-color: transparent;
     border: none;
 }
 
 .itemName {
     width: 100%;
-    background-color:transparent;
+    background-color: transparent;
     margin-top: 5px;
     border: dotted;
     border-radius: 5px;
@@ -230,7 +245,7 @@ body {
 }
 
 .priceInput {
-    background-color:transparent;
+    background-color: transparent;
     justify-self: flex-end;
     width: 95%;
     margin-top: 5px;
@@ -251,7 +266,7 @@ body {
         height: 10%;
         background-color: #C6273D;
     }
-    
+
     .title-container {
         border: none;
         position: relative;
@@ -267,38 +282,24 @@ body {
         height: 60%;
         width: 85%;
     }
-    
-    /* .title {
-        border: none;
-        font-size: 35px;
-        font-family: "Bangers";
-        margin-top: 5%;
-        text-shadow: -1px -1px #C6273D, 1px 1px #C6273D,  2px 2px orange;
-        -webkit-transform: rotate(-5deg) skew(-5deg, 0);
-        -moz-transform: rotate(-5deg) skew(-5deg, 0);
-        -ms-transform: rotate(-5deg) skew(-5deg, 0);
-        -o-transform: rotate(-5deg) skew(-5deg, 0);
-        transform: rotate(-5deg) skew(-5deg, 0);
-        float: left;
-        width: 100%;
-    } */
 
     .a-budget {
             font-size: 22px;
-            text-shadow: -1px -1px #C6273D, 1px 1px #C6273D,  2px 2px orange;            
+            text-shadow: -1px -1px #C6273D, 1px 1px #C6273D,  2px 2px #C6273D;            
             font-weight: bold;
             border: none;
             color: white;
             align-self: center;
             margin-bottom: 8px;
-        }
+    }
 
      .icons {
+
         position: absolute;
         display: none;
     }
-    
-    
+
+
     .non-mobile-banner1 {
         position: absolute;
         height: 9%;
@@ -309,7 +310,7 @@ body {
         display: block;
         border: 1px solid black;
     }
-    
+
     .non-mobile-banner2 {
         position: absolute;
         height: 9%;
@@ -324,11 +325,11 @@ body {
     .non-mobile-banner3 {
         display: none;
     }
-    
+
     .non-mobile-banner4 {
         display: none;
     }
-    
+
     h1 {
         align-self: flex-start;
     }
@@ -338,51 +339,57 @@ body {
         float: right;
     }
 
-   .clearfix{
-       clear: both;
-   }
+    .clearfix {
+        clear: both;
+    }
 
-   .sidebar {
-       display: flex;
-       flex-direction: column;
-       float: left;
-       height: 100%;
-       width: 14%;
-       font-size: 30px;
-       color:black;
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        float: left;
+        height: 100%;
+        width: 14%;
+        font-size: 30px;
+        color: black;
 
-   }
-   .box-label{
+    }
+
+
+    .box-label {
         transform: rotate(-2deg);
-        margin:15px;
-        padding:0 5px;
-        float:left;
-        background:#ddd;
-        border:1px solid #222;
-        box-shadow:3px 3px 0 #222;
-   }
-   .food{
+        margin: 15px;
+        padding: 0 5px;
+        float: left;
+        background: #ddd;
+        border: 1px solid #222;
+        box-shadow: 3px 3px 0 #222;
+    }
+
+    .food {
         outline: 2px solid black;
         border: 6px solid white;
-       background-image: url("avengers-cereals.jpg");
-       background-size: 100% 100%;
-       background-repeat: no-repeat;
-   }
-   .weapons{
+        background-image: url("avengers-cereals.jpg");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+    .weapons {
         outline: 2px solid black;
         border: 6px solid white;
-       background-image: url("avengers-weapon.jpg");
-       background-size: 100% 100%;
-       background-repeat: no-repeat;
-    
-   }
-   .attire{
+        background-image: url("avengers-weapon.jpg");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+
+    }
+
+    .attire {
         outline: 2px solid black;
         border: 6px solid white;
-       background-image: url("avengers-dressup.jpg");
-       background-size: 100% 100%;
-   }
-   .bills{
+        background-image: url("avengers-dressup.jpg");
+        background-size: 100% 100%;
+    }
+
+    .bills {
         outline: 2px solid black;
         border: 6px solid white;
        background-image: url("nyc.jpg");
@@ -411,23 +418,23 @@ body {
 
     .addItem {
         display: flex;
+        float: right;
         flex-direction: row;
         flex-wrap: auto;
-        z-index: auto;
+        z-index: 1;
         width: 85%;
         align-items: center;
         margin: auto;
         height: 6%;        
         position: auto;
-        bottom: auto; 
-        background-color:auto;
-        padding: 0px; 
+        bottom: auto;
+        background-color: white;
+        padding: 0px;
         font-size: auto;
         border-radius: 0px;
         box-shadow: none;
         float: right;
         border: 2px solid black;
-
     }
 
     .itemPrice {
@@ -435,7 +442,7 @@ body {
         align-items: center;
         font-size: 20px;
         font-weight: 400;
-        color: #78866B; 
+        color: #78866B;
         align-self: center;
         justify-self: auto;
         margin-top: 0px;
@@ -447,9 +454,10 @@ body {
         border-left: 1px solid black;
         border-top: 1px solid black;
     }
+
     .itemName {
         width: auto;
-        background-color:auto;
+        background-color: auto;
         height: 100%;
         margin-top: 0px;
         margin-bottom: 0px;
@@ -459,7 +467,7 @@ body {
         background-color: white;
     }
 
-    .catSelector{
+    .catSelector {
         width: 10%;
         margin-left: auto;
         margin-right: auto;
@@ -468,8 +476,10 @@ body {
         height: 100%;
         font-size: 20px;
     }
+
     .category-btn {
         width: 15%;
+        justify-self: flex-end;
         margin-left: auto;
         margin-right: 0px;
         margin-bottom: auto;
@@ -492,17 +502,9 @@ body {
 
     }
 
-
 }
 
-
-
 @media only screen and (min-width: 1200px) {
-
-    /* .title {
-         border: none;
-        font-size: 36px;
-    } */
 
     .lawsuit-bait {
         margin-top: 20px;
@@ -511,14 +513,15 @@ body {
     }
 
     .a-budget{
-        text-shadow: -1px -1px #C6273D, 1px 1px #C6273D,  2px 2px orange;
+        text-shadow: -1px -1px #C6273D, 1px 1px #C6273D,  2px 2px darkred;
         margin-bottom: 20px;
     }
+
     .icons {
         position: absolute;
         display: none;
     }
-    
+
     .non-mobile-banner1 {
         position: absolute;
         height: 9%;
@@ -528,7 +531,7 @@ body {
         border-radius: 53px;
         border: 1px solid black;
     }
-    
+
     .non-mobile-banner2 {
         position: absolute;
         height: 9%;
@@ -549,7 +552,7 @@ body {
         display: block;
         border: 1px solid black;
     }
-    
+
     .non-mobile-banner4 {
         position: absolute;
         height: 9%;
@@ -561,92 +564,21 @@ body {
         border: 1px solid black;
     }
 
-    .label-box{
+    .label-box {
         position: absolute;
         left: 15%;
         top: 5%;
         max-width: 400px;
-        font-size:50px;
-    }
-    
-    
-
-
-/* 
-    .addItem {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: auto;
-        z-index: auto;
-        width: 85%;
-        align-items: center;
-        margin: auto;
-        height: 5%;        
-        position: auto;
-        bottom: auto; 
-        background-color:auto;
-        padding: 0px; 
-        font-size: auto;
-        border-radius: 0px;
-        box-shadow: none;
-    
+        font-size: 50px;
     }
 
-    .itemPrice {
-        font-size: 15px;
-        font-weight: 400;
-        color: #78866B; 
-        align-self: center;
-        justify-self: auto;
-        margin-top: 0px;
-        margin-bottom: 0px;;
-        width: auto;
-        background-color:auto;
-        height: 100%;
-        border-bottom: 1px solid black;
+    .purchase-list{
+        position: absolute;
+        background-color: white;
+        border: 2px solid black;
+        z-index: 3;
+        left: 12%;
+        padding: 10px;
+        box-shadow: -8px 8px 5px black;
     }
-    .itemName {
-        width: auto;
-        background-color:auto;
-        height: 100%;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        border: 1px solid black;
-        border-radius: 0px;
-        font-size: 15px;
-    }
-    
-    .catSelector{
-        width: 10%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        height: 100%;
-    }
-    .category-btn {
-        width: 15%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: auto;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        height: 100%;
-        background-color: whitesmoke;
-    }
-    
-    .priceInput {
-        background-color:auto;
-        justify-self: auto;
-        align-self: center;
-        width: auto;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        height: 100%
-    } */
-
-    
-
-   
-       
 }

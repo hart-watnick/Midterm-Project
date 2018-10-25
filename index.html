@@ -18,8 +18,9 @@
         <img class="non-mobile-banner2" src="./images/avengers-logo-silver.jpg" />
         <img class="icons" src="./images/AvengersCharIcons.jpg" />
         <section class="title-container">
+          
             <img class="lawsuit-bait" src="./images/title.png"/>
-            <!-- <h1 class="title">Avengers Assemble</h1> -->
+
             <p class="a-budget"> A Budget</p>
         </section>
         <img class="non-mobile-banner3" src="./images/avengers-logo-silver.jpg" />
@@ -28,39 +29,39 @@
 
     <section class="main-body">
         <section class="label-box">
-        Weekly Budget
+            Weekly Budget
         </section>
         <section class="remaining-budget">
             <section class="digit">
                 <p class="num">$</p>
             </section>
             <section class="digit">
-                <p class="num">1</p>
+                <p id="millions" class="num">1</p>
             </section>
             <section class="digit">
-                <p class="num">0</p>
+                <p id="hThousands" class="num">0</p>
             </section>
             <section class="digit">
-                <p class="num">0</p>
+                <p id="tThousands" class="num">0</p>
             </section>
             <section class="digit">
-                <p class="num">0</p>
+                <p id="thousands" class="num">0</p>
             </section>
             <section class="digit">
-                <p class="num">0</p>
+                <p id="hundreds" class="num">0</p>
             </section>
             <section class="digit">
-                <p class="num">0</p>
+                <p id="tens" class="num">0</p>
             </section>
             <section class="digit">
-                <p class="num">0</p>
+                <p id="ones" class="num">0</p>
             </section>
 
         </section>
-        
+
         <section class="sidebar">
             <section class="category weapons">
-               <p class="box-label">Weapons</p>
+                <p class="box-label">Weapons</p>
             </section>
             <section class="category food">
                 <p class="box-label">Food</p>
@@ -78,15 +79,15 @@
         </section>
 
         <section class="purchase-btn">
-            <button class="purchase" type="button">Add a Purchase</button>
+            <button class="purchase" type="button"><img class="SmollIronMan" src="./images/IronManIcon.png"/> Purchase Item <img class="SmollCapt" src="./images/CaptAIcon.png"/></button>
         </section>
-
+ 
         <form class="addItem">
 
-            <span class= itemPrice>$</span>
-            <input class= "priceInput"  type="text">
+            <span class=itemPrice>$</span>
+            <input class="priceInput" type="text">
             <input class="itemName" type="text" placeholder="Name">
-            <select class= "catSelector">
+            <select class="catSelector">
                 <option value="Weapons" class="choice">Weapons</option>
                 <option value="Food" class="choice">Food</option>
                 <option value="Attire" class="choice">Attire</option>
@@ -96,7 +97,6 @@
         </form>
 
         <section class="legend"></section>
-
 
     </section>
     <script src="https://cdn.anychart.com/js/8.0.1/anychart-core.min.js"></script>
