@@ -1,5 +1,25 @@
 "use strict";
 
+// Creates list of initial purchases
+const purchases = [
+    {
+        name: "Pants for Bruce",
+        price: 60,
+        category: "Attire"
+    },
+    {
+        name: "Avengers Tower Rebuild",
+        price: 5000000,
+        category: "Bills"
+    },
+    {
+        name: "Shawarma",
+        price: 20,
+        category: "Food"
+    } 
+];
+
+// Creates pie chart populated with initial values 
 $(document).ready(() => {
     anychart.onDocumentReady(function() {
 
@@ -12,7 +32,7 @@ $(document).ready(() => {
                 value: 25
             },
             {
-                x: "Clothing",
+                x: "Attire",
                 value: 25
             },
             {
