@@ -137,7 +137,7 @@ $(document).ready(() => {
     $(document).on("click", ".category-btn", (event) => {
         let newItem = {
             name: $(".itemName")[0].value,
-            price: Number($(".price")[0].value),
+            price: Number($(".priceInput")[0].value),
             category: $(".catSelector")[0].value
         };
 
@@ -146,6 +146,7 @@ $(document).ready(() => {
         purchases.push(newItem);
         chartData = categoryTotals(purchases);
         let chart = anychart.pie();
+        chart.palette(anychart.palettes.blue);
         chart.title("");
         chart.data(chartData);
         chart.container('container');
