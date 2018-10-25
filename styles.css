@@ -1,26 +1,10 @@
 * {
-    border: 1px solid black;
     padding: 0;
     margin: 0;
     font-family: 'Bangers', cursive; 
 }
 
-.sidebar {
-    display: none;
-}
-
-.remaining-budget {
-
-    display: flex;
-    flex-direction: row;
-    height: 20%;
-    justify-content: space-around;
-
-}
-
-body {
-    height: 100vh;
-}
+                                /*Start Header*/                                  
 
 header {
     display: flex;
@@ -29,9 +13,9 @@ header {
     align-items: flex-start;
     height: 10%;
     background-color: #C6273D;
+    outline: 2px solid black;
+    border-bottom: 6px solid white;
 }
-
-
 
 .title-container {
     display: flex;
@@ -43,26 +27,26 @@ header {
     position: relative;
     background-color: #307AAD;
     width: 33%;
-    height: 100%;
-    padding-left: 5px;
-    padding-right: 5px;
+    height: 99%;
+    padding-left: 3px;
+    padding-right: 3px;
     border-radius: 0px;
 }
 
 .title {
+    text-shadow: -1px -1px #C6273D, 1px 1px #C6273D,  2px 2px orange;
     align-self: center;
     text-align: center;
-    font-size: 23px;
+    font-size: 28px;
     font-weight: bold;
     border: none;
     color: whitesmoke;
 }
 
-.a-budget {
-    font-weight: bold;
-    border: none;
+.a-budget{
+    font-size: 23px;
+    text-shadow: -1px -1px #C6273D, 1px 1px #C6273D,  2px 2px orange;
     color: white;
-
 }
 
 .icons {
@@ -95,6 +79,26 @@ h1 {
     align-self: center;
 }
 
+.main-body{
+    background-image: url("./images/background5.jpg");
+    /* background-size: cover; */
+}
+
+.sidebar {
+    display: none;
+}
+
+.remaining-budget {
+    display: flex;
+    flex-direction: row;
+    height: 20%;
+    justify-content: space-around;
+
+}
+
+body {
+    height: 100vh;
+}
 
 .main-body {
     height: 90%;
@@ -105,13 +109,17 @@ h1 {
 .pie-chart {
     height: 45%;
     background-color: white;
+    border: 1px solid black;
 }
 
 .digit {
+    background-color: white;
     flex-grow: 1;
     height: 60%;
     align-self: center;
     margin: 5px;
+    outline: 6px solid white;
+    border: 3px solid black;
 }
 .num{
     background-color: white;
@@ -216,10 +224,6 @@ h1 {
 
 @media only screen and (min-width: 768px) {
 
-    .main-body{
-        background-image: url("./images/background5.jpg");
-    }
-
     header {
         display: flex;
         flex-direction: column;
@@ -233,17 +237,37 @@ h1 {
         border: none;
         position: relative;
         background-color: #307AAD;
-        height: 100%;
+        height: 98%;
         padding-left: 25px;
         padding-right: 25px;
         border-radius: 10px;
     }
     
     .title {
-        border: none;
+        /* border: none;*/
         font-size: 35px;
-        color: whitesmoke;
+        font-family: "Bangers";
+        margin-top: 5%;
+        text-shadow: -1px -1px #C6273D, 1px 1px #C6273D,  2px 2px orange;
+        -webkit-transform: rotate(-5deg) skew(-5deg, 0);
+        -moz-transform: rotate(-5deg) skew(-5deg, 0);
+        -ms-transform: rotate(-5deg) skew(-5deg, 0);
+        -o-transform: rotate(-5deg) skew(-5deg, 0);
+        transform: rotate(-5deg) skew(-5deg, 0);
+        /* padding-bottom: 10px; */
+        float: left;
+        width: 100%;
     }
+
+    .a-budget {
+            font-size: 22px;
+            text-shadow: -1px -1px #C6273D, 1px 1px #C6273D,  2px 2px orange;            
+            font-weight: bold;
+            border: none;
+            color: white;
+            align-self: center;
+            margin-bottom: 8px;
+        }
 
      .icons {
         position: absolute;
@@ -253,27 +277,28 @@ h1 {
     
     .non-mobile-banner1 {
         position: absolute;
-        height: 10%;
-        width: 10%;
+        height: 9%;
+        width: 9%;
         left: 100px;
         background-color: white;
         border-radius: 50px;
         display: block;
+        border: 1px solid black;
     }
     
     .non-mobile-banner2 {
         position: absolute;
-        height: 10%;
-        width: 10%;
+        height: 9%;
+        width: 9%;
         right: 100px;
         background-color: white;
         border-radius: 50px;
         display: block;
+        border: 1px solid black;
     }
     
     h1 {
         align-self: flex-start;
-
     }
 
     .remaining-budget {
@@ -296,21 +321,29 @@ h1 {
 
    }
    .food{
+        outline: 2px solid black;
+        border: 6px solid white;
        background-image: url("avengers-cereals.jpg");
        background-size: 100% 100%;
        background-repeat: no-repeat;
    }
    .weapons{
+        outline: 2px solid black;
+        border: 6px solid white;
        background-image: url("avengers-weapon.jpg");
        background-size: 100% 100%;
        background-repeat: no-repeat;
     
    }
    .attire{
+        outline: 2px solid black;
+        border: 6px solid white;
        background-image: url("avengers-dressup.jpg");
        background-size: 100% 100%;
    }
    .bills{
+        outline: 2px solid black;
+        border: 6px solid white;
        background-image: url("nyc.jpg");
        background-size: 100% 100%;
    }
@@ -346,6 +379,15 @@ h1 {
 
 @media only screen and (min-width: 767px) {
 
+    .title {
+        /* border: none;*/
+        font-size: 36px;
+    }
+
+    .a-budget{
+        text-shadow: -1px -1px #C6273D, 1px 1px #C6273D,  2px 2px orange;
+        margin-bottom: 20px;
+    }
     .icons {
         position: absolute;
         display: none;
@@ -354,40 +396,44 @@ h1 {
 
     .non-mobile-banner1 {
         position: absolute;
-        height: 10%;
-        width: 6%;
+        height: 9%;
+        width: 5%;
         left: 5%;
         background-color: white;
         border-radius: 53px;
+        border: 1px solid black;
     }
     
     .non-mobile-banner2 {
         position: absolute;
-        height: 10%;
-        width: 6%;
+        height: 9%;
+        width: 5%;
         right: 5%;
         background-color: white;
         border-radius: 53px;
+        border: 1px solid black;
     }
 
     .non-mobile-banner3 {
         position: absolute;
-        height: 10%;
-        width: 6%;
+        height: 9%;
+        width: 5%;
         left: 20%;
         background-color: white;
         border-radius: 53px;
         display: block;
+        border: 1px solid black;
     }
     
     .non-mobile-banner4 {
         position: absolute;
-        height: 10%;
-        width: 6%;
+        height: 9%;
+        width: 5%;
         right: 20%;
         background-color: white;
         border-radius: 53px;
         display: block;
+        border: 1px solid black;
     }
     
     
