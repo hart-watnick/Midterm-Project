@@ -54,10 +54,18 @@
         </section>
 
         <section class="sidebar">
-            <section class="category weapons">Weapons</section>
-            <section class="category food">Food</section>
-            <section class="category attire">Attire</section>
-            <section class="category bills">Bills</section>
+            <section class="category weapons">
+               <p class="box-label">Weapons</p>
+            </section>
+            <section class="category food">
+                <p class="box-label">Food</p>
+            </section>
+            <section class="category attire">
+                <p class="box-label">Attire</p>
+            </section>
+            <section class="category bills">
+                <p class="box-label">Bills</p>
+            </section>
         </section>
 
         <section class="pie-chart">
@@ -65,16 +73,18 @@
         </section>
 
         <section class="purchase-btn">
-            <button type="button">Add a Purchase</button>
+            <button class="purchase" type="button">Add a Purchase</button>
         </section>
 
         <form class="addItem">
-            <input class ="price" type="text" placeholder="$">
+
+            <span class= itemPrice>$</span>
+            <input class= "priceInput"  type="text">
             <input class="itemName" type="text" placeholder="Name">
-            <select class="catSelector">
+            <select class= "catSelector">
                 <option value="Weapons" class="choice">Weapons</option>
                 <option value="Food" class="choice">Food</option>
-                <option value="Clothing" class="choice">Clothing</option>
+                <option value="Attire" class="choice">Attire</option>
                 <option value="Bills" class="choice">Bills</option>
             </select>
             <button class="category-btn" type="button">Add Item</button>
