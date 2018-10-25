@@ -2,6 +2,7 @@
     border: 1px solid black;
     padding: 0;
     margin: 0;
+    font-family: 'Bangers', cursive;
 }
 
 .sidebar {
@@ -88,6 +89,28 @@ form {
        float: left;
        height: 100%;
        width: 14%;
+       font-size: 30px;
+       color:slategray;
+
+   }
+   .food{
+       background-image: url("avengers-cereals.jpg");
+       background-size: 100% 100%;
+       background-repeat: no-repeat;
+   }
+   .weapons{
+       background-image: url("avengers-weapon.jpg");
+       background-size: 100% 100%;
+       background-repeat: no-repeat;
+    
+   }
+   .attire{
+       background-image: url("avengers-dressup.jpg");
+       background-size: 100% 100%;
+   }
+   .bills{
+       background-image: url("nyc.jpg");
+       background-size: 100% 100%;
    }
 
    .category {
