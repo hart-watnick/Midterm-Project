@@ -190,4 +190,7 @@ console.log($(window).width());
         }
     });
 
+    $(document).on("mouseenter", "button , .sidebar", (event) => {
+        $(event.target).css("cursor", "pointer");
+    })
 });
