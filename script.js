@@ -47,8 +47,14 @@ $(document).ready(() => {
             price: 600,
             category: "Food"
         }
-
     ];
+
+    let options = {
+        useEasing: false,
+        useGrouping: false,
+        separator: '',
+        decimal: '',
+    };
     let budget = 1000000;
     // This function creates totals by category
     const categoryTotals = (purchases) => {
@@ -100,17 +106,15 @@ $(document).ready(() => {
         let grandTotal = 0,
             placeValues = [];
 
-        let options = {
-            useEasing: true,
-            useGrouping: false,
-            separator: ',',
-            decimal: '.',
-        };
-        
-
         for (let category of categoryTotals) {
             grandTotal += category.value;
         }
+
+        if ((budget - grandTotal) <= 0) {
+            $(".brokenBudget").show();
+            $("body").fadeOut(3000);
+        }
+
         grandTotal = budget - grandTotal;
         placeValues[0] = Math.floor(grandTotal / 1000000);
         grandTotal -= (placeValues[0] * 1000000);
@@ -125,11 +129,54 @@ $(document).ready(() => {
         placeValues[5] = Math.floor(grandTotal / 10);
         grandTotal -= (placeValues[5] * 10);
         placeValues[6] = grandTotal;
+
         for (let i = 1; i < $(".digit").length; i++) {
             $(".digit")[i].children[0].textContent = `${placeValues[i - 1]}`;
         }
 
-    }
+        let millions = new CountUp("millions", 0, placeValues[0], 0, 3, options);
+        if (!millions.error) {
+            millions.start();
+        } else {
+            console.error(millions.error);
+        }
+        let hThousands = new CountUp("hThousands", 0, placeValues[1], 0, 3, options);
+        if (!hThousands.error) {
+            hThousands.start();
+        } else {
+            console.error(hThousands.error);
+        }
+        let tThousands = new CountUp("tThousands", 0, placeValues[2], 0, 3, options);
+        if (!tThousands.error) {
+            tThousands.start();
+        } else {
+            console.error(tThousands.error);
+        }
+        let thousands = new CountUp("thousands", 0, placeValues[3], 0, 3, options);
+        if (!thousands.error) {
+            thousands.start();
+        } else {
+            console.error(thousands.error);
+        }
+        let hundreds = new CountUp("hundreds", 0, placeValues[4], 0, 3, options);
+        if (!hundreds.error) {
+            hundreds.start();
+        } else {
+            console.error(hundreds.error);
+        }
+        let tens = new CountUp("tens", 0, placeValues[5], 0, 3, options);
+        if (!tens.error) {
+            tens.start();
+        } else {
+            console.error(tens.error);
+        }
+        let ones = new CountUp("ones", 0, placeValues[6], 0, 3, options);
+        if (!ones.error) {
+            ones.start();
+        } else {
+            console.error(ones.error);
+        }
+    };
 
     budgetRemaining(chartData);
     // Creates pie chart populated with initial values 
@@ -155,8 +202,8 @@ $(document).ready(() => {
             $(".addItem")
                 .fadeOut("slow");
         }
-        
-        $("input").each(function(){
+
+        $("input").each(function () {
             $(this).val("");
         })
 
@@ -172,10 +219,7 @@ $(document).ready(() => {
         chart.draw();
         $("#ticker")[0].play();
         budgetRemaining(chartData);
-
-
     });
-
 
     $(document).on("click", ".purchase-btn", (event) => {
         $(".addItem")
@@ -192,7 +236,6 @@ $(document).ready(() => {
     });
 
     //Opens a list of purchased items when hovering over the categories
-
     $(document).on("mouseenter", ".weapons", (event) => {
         $(".weapons").append(`
         <section class="purchase-list"></section> 
@@ -206,8 +249,11 @@ $(document).ready(() => {
         }
     });
 
-
-    $(document).on("mouseenter", "button , .sidebar", (event) => {
+    $(document).on("mouseenter", ".weapons, .bills, .attire, .food, .sidebar", (event) => {
+        $(event.target).css("cursor", "crosshair");
+    });
+    
+    $(document).on("mouseenter", "button", (event) => {
         $(event.target).css("cursor", "pointer");
     })
 
