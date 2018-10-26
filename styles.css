@@ -120,7 +120,7 @@ body {
 .label-box {
     display: inline-block;
     text-align: center;
-    height: 10%;
+    height: 4%;
     min-width: 100px;
     width: 40%;
     position: relative;
@@ -131,7 +131,7 @@ body {
     background: white;
     border: 1px solid #222;
     box-shadow: 3px 3px 0 #222;
-    font-size: 35px;
+    font-size: 30px;
     padding-bottom: 5px;
 }
 
@@ -336,6 +336,24 @@ body {
         clear: both;
     }
 
+    .label-box {
+        display: inline-block;
+        text-align: center;
+        height: 5.5%;
+        min-width: 100px;
+        width: 40%;
+        position: relative;
+        left: 30%;
+        transform: rotate(-5deg);
+        margin-top: 10px;
+        padding: 0 5px;
+        background: white;
+        border: 1px solid #222;
+        box-shadow: 3px 3px 0 #222;
+        font-size: 35px;
+        padding-bottom: 5px;
+    }
+
     .box-label {
         transform: rotate(-2deg);
         margin: 15px;
@@ -474,6 +492,11 @@ body {
 }
 
 @media only screen and (min-width: 1200px) {
+
+    .label-box {
+        height: 7%;
+    }
+
     .remaining-budget {
         width: 50%;
         float: right;
