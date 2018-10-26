@@ -228,7 +228,7 @@ $(document).ready(() => {
     });
 
     $(window).resize(function () {
-        if ($(window).width() > 768) {
+        if ($(window).width() >= 768) {
             $(".addItem").css("display", "flex");
         } else {
             $(".addItem").css("display", "none");
