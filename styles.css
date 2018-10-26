@@ -131,7 +131,7 @@ body {
     background: white;
     border: 1px solid #222;
     box-shadow: 3px 3px 0 #222;
-    font-size: 40px;
+    font-size: 35px;
     padding-bottom: 5px;
 }
 
@@ -173,10 +173,9 @@ body {
 .purchase {
     display: flex;
     align-items: center;
+    font-size: 30px;
     justify-content: space-around;
-    margin-top: 8%;
-    height: 50px;
-    width: 200px;
+    height: 60%;
     box-shadow:3px 3px 0 black;
 
 }
@@ -184,13 +183,13 @@ body {
 .SmollIronMan {
     border-radius: 30px;
     width: 35px;
-    height: 35px;
+    height: 45px;
 }
 
 .SmollCapt {
     border-radius: 30px;
     width: 35px;
-    height: 35px;
+    height: 45px;
 }
 
 .addItem {
@@ -416,7 +415,7 @@ body {
         display: flex;
         position: relative;
         left:0%;
-        top: -50%;
+        top: 0%;
         float: right;
         flex-direction: row;
         flex-wrap: auto;
@@ -500,8 +499,7 @@ body {
 
 }
 
-@media only screen and (min-width: 768px) {
-
+@media only screen and (min-width: 1200px) {
     .lawsuit-bait {
         margin-top: 20px;
         height: 60%;
