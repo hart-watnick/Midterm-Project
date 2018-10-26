@@ -17,6 +17,15 @@ header {
     border-bottom: 6px solid white;
 }
 
+.brokenBudget {
+    display: none;
+    width: 100%;
+    position: fixed;
+    z-index: 999999999;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .title-container {
     display: flex;
     flex-direction: column;
@@ -39,9 +48,9 @@ header {
     width: 90%;
 }
 
-.a-budget{
+.a-budget {
     font-size: 18px;
-    text-shadow: -1px -1px #C6273D, 1px 1px #C6273D,  2px 2px #C6273D;
+    text-shadow: -1px -1px #C6273D, 1px 1px #C6273D, 2px 2px #C6273D;
 
     color: white;
 }
@@ -124,6 +133,7 @@ body {
     border: 1px solid #222;
     box-shadow: 3px 3px 0 #222;
     font-size: 40px;
+    padding-bottom: 5px;
 }
 
 .pie-chart {
@@ -169,7 +179,7 @@ body {
     height: 50px;
     width: 200px;
     transform: rotate(-2deg);
-    box-shadow:3px 3px 0 black;
+    box-shadow: 3px 3px 0 black;
 }
 
 .SmollIronMan {
@@ -267,6 +277,11 @@ body {
         background-color: #C6273D;
     }
 
+    .brokenBudget {
+        width: auto;
+        left: 33%;
+    }
+
     .title-container {
         border: none;
         position: relative;
@@ -284,16 +299,16 @@ body {
     }
 
     .a-budget {
-            font-size: 22px;
-            text-shadow: -1px -1px #C6273D, 1px 1px #C6273D,  2px 2px #C6273D;            
-            font-weight: bold;
-            border: none;
-            color: white;
-            align-self: center;
-            margin-bottom: 8px;
+        font-size: 22px;
+        text-shadow: -1px -1px #C6273D, 1px 1px #C6273D, 2px 2px #C6273D;
+        font-weight: bold;
+        border: none;
+        color: white;
+        align-self: center;
+        margin-bottom: 8px;
     }
 
-     .icons {
+    .icons {
 
         position: absolute;
         display: none;
@@ -392,29 +407,29 @@ body {
     .bills {
         outline: 2px solid black;
         border: 6px solid white;
-       background-image: url("nyc.jpg");
-       background-size: 100% 100%;
-   }
+        background-image: url("nyc.jpg");
+        background-size: 100% 100%;
+    }
 
-   .category {
-       flex-grow: 1;
-   }
+    .category {
+        flex-grow: 1;
+    }
 
-   .pie-chart {
-       float: right;
-       width: 85%;
-       height: 65%;
-       outline: 4px solid white;
-       border: 2px solid black;
-   }
+    .pie-chart {
+        float: right;
+        width: 85%;
+        height: 65%;
+        outline: 4px solid white;
+        border: 2px solid black;
+    }
 
-   .purchase-btn {
-       display: none;
-   }
-   
-   .itemName {
-       flex-grow: 2;
-  }
+    .purchase-btn {
+        display: none;
+    }
+
+    .itemName {
+        flex-grow: 2;
+    }
 
     .addItem {
         display: flex;
@@ -425,7 +440,7 @@ body {
         width: 85%;
         align-items: center;
         margin: auto;
-        height: 6%;        
+        height: 6%;
         position: auto;
         bottom: auto;
         background-color: white;
@@ -446,7 +461,8 @@ body {
         align-self: center;
         justify-self: auto;
         margin-top: 0px;
-        margin-bottom: 0px;;
+        margin-bottom: 0px;
+        ;
         width: 1%;
         background-color: white;
         height: 100%;
@@ -491,7 +507,7 @@ body {
     }
 
     .priceInput {
-        background-color: white;        
+        background-color: white;
         justify-self: auto;
         align-self: center;
         width: auto;
@@ -504,7 +520,7 @@ body {
 
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 768px) {
 
     .lawsuit-bait {
         margin-top: 20px;
@@ -512,8 +528,8 @@ body {
         width: 85%;
     }
 
-    .a-budget{
-        text-shadow: -1px -1px #C6273D, 1px 1px #C6273D,  2px 2px darkred;
+    .a-budget {
+        text-shadow: -1px -1px #C6273D, 1px 1px #C6273D, 2px 2px darkred;
         margin-bottom: 20px;
     }
 
@@ -572,7 +588,7 @@ body {
         font-size: 50px;
     }
 
-    .purchase-list{
+    .purchase-list {
         position: absolute;
         background-color: white;
         border: 2px solid black;
