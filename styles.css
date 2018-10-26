@@ -85,7 +85,6 @@ body {
 .main-body {
     height: 90%;
     background-image: url("./images/background5.jpg");
-    /* background-size: cover; */
     position: relative;
 }
 
@@ -117,7 +116,7 @@ body {
     width: 40%;
     position: relative;
     left: 30%;
-    transform: rotate(-2deg);
+    transform: rotate(-5deg);
     margin-top: 10px;
     padding: 0 5px;
     background: white;
@@ -168,19 +167,16 @@ body {
     margin-top: 8%;
     height: 50px;
     width: 200px;
-    transform: rotate(-2deg);
     box-shadow:3px 3px 0 black;
 }
 
 .SmollIronMan {
-    /* transform: rotate(-2deg); */
     border-radius: 30px;
     width: 35px;
     height: 35px;
 }
 
 .SmollCapt {
-    /* transform: rotate(-2deg); */
     border-radius: 30px;
     width: 35px;
     height: 35px;
@@ -188,73 +184,57 @@ body {
 
 .addItem {
     display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
     z-index: 99999999;
-    width: 80%;
-    margin: 0 auto;
-    height: 40%;
-    position: relative;
-    bottom: 265px;
-    background-color: rgba(255, 255, 255, 0.8);
+    width: 90%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: linear-gradient(rgba(255, 255, 255, 0.8),rgba(255, 255, 255, 0.8)), url(the-avengers.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 5px;
     font-size: 10px;
     border-radius: 5px;
     box-shadow: 0px 0px 31px 1px rgba(0, 0, 0, 0.3);
 }
 
-.itemPrice {
-    justify-self: flex-start;
-    align-self: center;
-    margin-top: 5px;
-    width: 3%;
-    font-size: 20px;
-    font-weight: 400;
-    color: #78866B;
+.itemName {
+    width: 90%;
     background-color: transparent;
     border: none;
-}
-
-.itemName {
-    width: 100%;
-    background-color: transparent;
-    margin-top: 5px;
-    border: dotted;
-    border-radius: 5px;
-    padding-left: 10px;
+    border-bottom: 1px solid black;
     height: 35px;
     font-size: 20px;
 }
 
 .catSelector {
-    width: 100%;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 5px;
-    margin-bottom: 0px;
-    height: 45px;
-    align-self: center;
+    width: 90%;
+    height: 35px;
     font-size: 20px;
 }
 
 .category-btn {
-    width: 100%;
-    margin-left: 10%;
-    margin-right: 10%;
+    width: 90%;
+    height: 35px;
     margin-bottom: 5px;
     font-size: 20px;
 }
 
 .priceInput {
     background-color: transparent;
-    justify-self: flex-end;
-    width: 95%;
-    margin-top: 5px;
+    width: 90%;
+    height: 35px;
     border: none;
     border-bottom: 1px solid black;
     font-size: 20px;
-    padding-bottom: 0px;
-    padding-left: 5px;
-}
+ } 
 
 @media only screen and (min-width: 768px) {
 
@@ -418,19 +398,18 @@ body {
 
     .addItem {
         display: flex;
+        position: relative;
+        left:0%;
+        top: -50%;
         float: right;
         flex-direction: row;
         flex-wrap: auto;
-        z-index: 1;
+        z-index: 0;
         width: 85%;
-        align-items: center;
-        margin: auto;
-        height: 6%;        
-        position: auto;
-        bottom: auto;
+        margin-top: 22px;
+        height: 6%;
+        transform: translate(0);        
         background-color: white;
-        padding: 0px;
-        font-size: auto;
         border-radius: 0px;
         box-shadow: none;
         float: right;
@@ -566,8 +545,8 @@ body {
 
     .label-box {
         position: absolute;
-        left: 15%;
-        top: 5%;
+        left: 20%;
+        top: 2%;
         max-width: 400px;
         font-size: 50px;
     }
