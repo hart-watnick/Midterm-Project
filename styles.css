@@ -293,6 +293,9 @@ body {
         position: absolute;
         display: none;
     }
+    .purchase-btn{
+        display: none;
+    }
 
 
     .non-mobile-banner1 {
@@ -329,26 +332,9 @@ body {
         align-self: flex-start;
     }
 
-    .remaining-budget {
-        width: 50%;
-        float: right;
-    }
-
     .clearfix {
         clear: both;
     }
-
-    .sidebar {
-        display: flex;
-        flex-direction: column;
-        float: left;
-        height: 100%;
-        width: 14%;
-        font-size: 30px;
-        color: black;
-
-    }
-
 
     .box-label {
         transform: rotate(-2deg);
@@ -395,18 +381,6 @@ body {
         flex-grow: 1;
     }
 
-    .pie-chart {
-        float: right;
-        width: 85%;
-        height: 65%;
-        outline: 4px solid white;
-        border: 2px solid black;
-    }
-
-    .purchase-btn {
-        display: none;
-    }
-
     .itemName {
         flex-grow: 2;
     }
@@ -420,14 +394,14 @@ body {
         flex-direction: row;
         flex-wrap: auto;
         z-index: 0;
-        width: 85%;
+        width: 98%;
         margin-top: 22px;
         height: 6%;
         transform: translate(0);        
         background-color: white;
         border-radius: 0px;
         box-shadow: none;
-        float: right;
+        float: none;
         border: 2px solid black;
     }
 
@@ -500,6 +474,52 @@ body {
 }
 
 @media only screen and (min-width: 1200px) {
+    .remaining-budget {
+        width: 50%;
+        float: right;
+    }
+
+    .purchase-btn {
+        display: none;
+    }
+
+    .addItem {
+        display: flex;
+        position: relative;
+        left:0%;
+        top: 0%;
+        float: right;
+        flex-direction: row;
+        flex-wrap: auto;
+        z-index: 0;
+        width: 85%;
+        margin-top: 22px;
+        height: 6%;
+        transform: translate(0);        
+        background-color: white;
+        border-radius: 0px;
+        box-shadow: none;
+        float: right;
+        border: 2px solid black;
+    }
+    .pie-chart {
+        float: right;
+        width: 85%;
+        height: 65%;
+        outline: 4px solid white;
+        border: 2px solid black;
+    }
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        float: left;
+        height: 100%;
+        width: 14%;
+        font-size: 30px;
+        color: black;
+
+    }
+
     .lawsuit-bait {
         margin-top: 20px;
         height: 60%;
