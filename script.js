@@ -49,6 +49,12 @@ $(document).ready(() => {
         }
 
     ];
+    let options = {
+        useEasing: false,
+        useGrouping: false,
+        separator: '',
+        decimal: '',
+    };
     let budget = 1000000;
     // This function creates totals by category
     const categoryTotals = (purchases) => {
@@ -100,14 +106,6 @@ $(document).ready(() => {
         let grandTotal = 0,
             placeValues = [];
 
-        let options = {
-            useEasing: true,
-            useGrouping: false,
-            separator: ',',
-            decimal: '.',
-        };
-        
-
         for (let category of categoryTotals) {
             grandTotal += category.value;
         }
@@ -129,137 +127,174 @@ $(document).ready(() => {
             $(".digit")[i].children[0].textContent = `${placeValues[i - 1]}`;
         }
 
+        let millions = new CountUp("millions", 0, placeValues[0], 0, 3, options);
+        if (!millions.error) {
+            millions.start();
+        } else {
+            console.error(millions.error);
+        }
+        let hThousands = new CountUp("hThousands", 0, placeValues[1], 0, 3, options);
+        if (!hThousands.error) {
+            hThousands.start();
+        } else {
+            console.error(hThousands.error);
+        }
+        let tThousands = new CountUp("tThousands", 0, placeValues[2], 0, 3, options);
+        if (!tThousands.error) {
+            tThousands.start();
+        } else {
+            console.error(tThousands.error);
+        }
+        let thousands = new CountUp("thousands", 0, placeValues[3], 0, 3, options);
+        if (!thousands.error) {
+            thousands.start();
+        } else {
+            console.error(thousands.error);
+        }
+        let hundreds = new CountUp("hundreds", 0, placeValues[4], 0, 3, options);
+        if (!hundreds.error) {
+            hundreds.start();
+        } else {
+            console.error(hundreds.error);
+        }
+        let tens = new CountUp("tens", 0, placeValues[5], 0, 3, options);
+        if (!tens.error) {
+            tens.start();
+        } else {
+            console.error(tens.error);
+        }
+        let ones = new CountUp("ones", 0, placeValues[6], 0, 3, options);
+        if (!ones.error) {
+            ones.start();
+        } else {
+            console.error(ones.error);
+        }
+    };
+
+budgetRemaining(chartData);
+// Creates pie chart populated with initial values 
+anychart.onDocumentReady(function () {
+    let chart = anychart.pie();
+    chart.palette(anychart.palettes.blue);
+    chart.title(`Total Spent: $${chartData[0].value + chartData[1].value + chartData[2].value + chartData[3].value}`);
+    chart.data(chartData);
+    chart.container('container');
+    chart.draw();
+});
+
+// Adds new purchases to purchase array and redraws chart with ne info
+$(document).on("click", ".category-btn", (event) => {
+    $("#ker-ching")[0].play();
+    let newItem = {
+        name: $(".itemName")[0].value,
+        price: Number($(".priceInput")[0].value),
+        category: $(".catSelector")[0].value
+    };
+
+    if ($(window).width() <= 768) {
+        $(".addItem")
+            .fadeOut("slow");
     }
 
-    budgetRemaining(chartData);
-    // Creates pie chart populated with initial values 
-    anychart.onDocumentReady(function () {
-        let chart = anychart.pie();
-        chart.palette(anychart.palettes.blue);
-        chart.title(`Total Spent: $${chartData[0].value + chartData[1].value + chartData[2].value + chartData[3].value}`);
-        chart.data(chartData);
-        chart.container('container');
-        chart.draw();
-    });
-
-    // Adds new purchases to purchase array and redraws chart with ne info
-    $(document).on("click", ".category-btn", (event) => {
-        $("#ker-ching")[0].play();
-        let newItem = {
-            name: $(".itemName")[0].value,
-            price: Number($(".priceInput")[0].value),
-            category: $(".catSelector")[0].value
-        };
-
-        if ($(window).width() <= 768) {
-            $(".addItem")
-                .fadeOut("slow");
-        }
-        
-        $("input").each(function(){
-            $(this).val("");
-        })
-
-        $(".pie-chart").empty().append(`<div id="container" style="width: 100%; height: 100%"></div>`);
-
-        purchases.push(newItem);
-        chartData = categoryTotals(purchases);
-        let chart = anychart.pie();
-        chart.palette(anychart.palettes.blue);
-        chart.title(`Total Spent: $${chartData[0].value + chartData[1].value + chartData[2].value + chartData[3].value}`);
-        chart.data(chartData);
-        chart.container('container');
-        chart.draw();
-        $("#ticker")[0].play();
-        budgetRemaining(chartData);
-
-
-    });
-
-
-    $(document).on("click", ".purchase-btn", (event) => {
-        $(".addItem")
-            .fadeIn("slow")
-            .css("display", "flex");
-    });
-
-    $(window).resize(function () {
-        if ($(window).width() > 768) {
-            $(".addItem").css("display", "flex");
-        } else {
-            $(".addItem").css("display", "none");
-        }
-    });
-
-    //Opens a list of purchased items when hovering over the categories
-
-    $(document).on("mouseenter", ".weapons", (event) => {
-        $(".weapons").append(`
-        <section class="purchase-list"></section> 
-        `);
-
-        for (let purchase of purchases) {
-            if (purchase.category === "Weapons") {
-
-                $(".purchase-list").append(`<p>${purchase.name} : $${purchase.price}</p>`);
-            }
-        }
-    });
-
-
-    $(document).on("mouseenter", "button , .sidebar", (event) => {
-        $(event.target).css("cursor", "pointer");
+    $("input").each(function () {
+        $(this).val("");
     })
 
-    $(document).on("mouseleave", ".weapons", (event) => {
-        $(".purchase-list").remove("");
-    });
+    $(".pie-chart").empty().append(`<div id="container" style="width: 100%; height: 100%"></div>`);
 
-    $(document).on("mouseenter", ".food", (event) => {
-        $(".food").append(`
+    purchases.push(newItem);
+    chartData = categoryTotals(purchases);
+    let chart = anychart.pie();
+    chart.palette(anychart.palettes.blue);
+    chart.title(`Total Spent: $${chartData[0].value + chartData[1].value + chartData[2].value + chartData[3].value}`);
+    chart.data(chartData);
+    chart.container('container');
+    chart.draw();
+    $("#ticker")[0].play();
+    budgetRemaining(chartData);
+});
+
+$(document).on("click", ".purchase-btn", (event) => {
+    $(".addItem")
+        .fadeIn("slow")
+        .css("display", "flex");
+});
+
+$(window).resize(function () {
+    if ($(window).width() > 768) {
+        $(".addItem").css("display", "flex");
+    } else {
+        $(".addItem").css("display", "none");
+    }
+});
+
+//Opens a list of purchased items when hovering over the categories
+$(document).on("mouseenter", ".weapons", (event) => {
+    $(".weapons").append(`
         <section class="purchase-list"></section> 
         `);
 
-        for (let purchase of purchases) {
-            if (purchase.category === "Food") {
-                $(".purchase-list").append(`<p>${purchase.name} : $${purchase.price}</p>`);
-            }
+    for (let purchase of purchases) {
+        if (purchase.category === "Weapons") {
+
+            $(".purchase-list").append(`<p>${purchase.name} : $${purchase.price}</p>`);
         }
-    });
+    }
+});
 
-    $(document).on("mouseleave", ".food", (event) => {
-        $(".purchase-list").remove("");
-    });
+$(document).on("mouseenter", "button , .sidebar", (event) => {
+    $(event.target).css("cursor", "pointer");
+})
 
-    $(document).on("mouseenter", ".attire", (event) => {
-        $(".attire").append(`
+$(document).on("mouseleave", ".weapons", (event) => {
+    $(".purchase-list").remove("");
+});
+
+$(document).on("mouseenter", ".food", (event) => {
+    $(".food").append(`
         <section class="purchase-list"></section> 
         `);
 
-        for (let purchase of purchases) {
-            if (purchase.category === "Attire") {
-                $(".purchase-list").append(`<p>${purchase.name} : $${purchase.price}</p>`);
-            }
+    for (let purchase of purchases) {
+        if (purchase.category === "Food") {
+            $(".purchase-list").append(`<p>${purchase.name} : $${purchase.price}</p>`);
         }
-    });
+    }
+});
 
-    $(document).on("mouseleave", ".attire", (event) => {
-        $(".purchase-list").remove("");
-    });
+$(document).on("mouseleave", ".food", (event) => {
+    $(".purchase-list").remove("");
+});
 
-    $(document).on("mouseenter", ".bills", (event) => {
-        $(".bills").append(`
+$(document).on("mouseenter", ".attire", (event) => {
+    $(".attire").append(`
         <section class="purchase-list"></section> 
         `);
 
-        for (let purchase of purchases) {
-            if (purchase.category === "Bills") {
-                $(".purchase-list").append(`<p>${purchase.name} : $${purchase.price}</p>`);
-            }
+    for (let purchase of purchases) {
+        if (purchase.category === "Attire") {
+            $(".purchase-list").append(`<p>${purchase.name} : $${purchase.price}</p>`);
         }
-    });
+    }
+});
 
-    $(document).on("mouseleave", ".bills", (event) => {
-        $(".purchase-list").remove("");
-    });
+$(document).on("mouseleave", ".attire", (event) => {
+    $(".purchase-list").remove("");
+});
+
+$(document).on("mouseenter", ".bills", (event) => {
+    $(".bills").append(`
+        <section class="purchase-list"></section> 
+        `);
+
+    for (let purchase of purchases) {
+        if (purchase.category === "Bills") {
+            $(".purchase-list").append(`<p>${purchase.name} : $${purchase.price}</p>`);
+        }
+    }
+});
+
+$(document).on("mouseleave", ".bills", (event) => {
+    $(".purchase-list").remove("");
+});
 });
